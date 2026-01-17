@@ -88,6 +88,7 @@ export default function CartFlyout() {
                     </div>
                     <a
                         href="/koszyk"
+                        onClick={() => isCartOpen.set(false)}
                         className="block w-full text-center bg-bronze-500 text-navy-900 py-4 uppercase tracking-widest font-bold hover:bg-white transition-colors duration-300"
                     >
                         Zobacz Koszyk i Zapłać
