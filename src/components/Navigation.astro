@@ -1,0 +1,118 @@
+---
+---
+
+<nav id="main-nav" class="fixed top-0 left-0 w-full z-50 p-6 md:p-12 flex justify-between items-center transition-all duration-500">
+    <a href="/" class="text-cream-100 font-serif text-2xl md:text-3xl tracking-widest uppercase hover:text-bronze-500 transition-colors z-[70] relative">
+       Moja Pasja
+    </a>
+    
+    {/* Desktop Menu */}
+    <ul class="hidden md:flex gap-8 text-xs lg:text-sm uppercase tracking-widest text-cream-100/80 font-body items-center z-[70] relative">
+       <li><a href="/#about" class="hover:text-bronze-500 transition-colors py-2">O artystce</a></li>
+       <li><a href="/#process" class="hover:text-bronze-500 transition-colors py-2">Proces</a></li>
+       <li><a href="/kolekcja" class="hover:text-bronze-500 transition-colors py-2">Kolekcja</a></li>
+       <li><a href="/#testimonials" class="hover:text-bronze-500 transition-colors py-2">Opinie</a></li>
+       <li><a href="/#faq" class="hover:text-bronze-500 transition-colors py-2">FAQ</a></li>
+       <li><a href="/kontakt" class="text-bronze-500 hover:text-white transition-colors py-2 border border-bronze-500 px-4 py-2 rounded-sm hover:bg-bronze-500 hover:text-navy-900 duration-300">Kontakt</a></li>
+    </ul>
+
+    {/* Mobile Menu Button */}
+    <button id="menu-toggle" class="md:hidden text-cream-100 z-[70] relative w-10 h-10 flex items-center justify-center focus:outline-none">
+        <span class="sr-only">Menu</span>
+        <div class="w-8 h-4 relative flex flex-col justify-between">
+            <span class="w-full h-0.5 bg-cream-100 transition-all duration-300 origin-right" id="line-1"></span>
+            <span class="w-full h-0.5 bg-cream-100 transition-all duration-300" id="line-2"></span>
+            <span class="w-full h-0.5 bg-cream-100 transition-all duration-300 origin-right" id="line-3"></span>
+        </div>
+    </button>
+
+    {/* Mobile Overlay Menu */}
+    <div id="mobile-menu" class="fixed inset-0 bg-navy-900/98 backdrop-blur-xl z-[60] flex flex-col items-center justify-center translate-x-full transition-transform duration-500 ease-in-out">
+        <ul class="flex flex-col gap-8 text-center">
+           {/* Mobile Links with Staggered Animation classes added via JS */}
+           <li><a href="/#about" class="mobile-link text-3xl font-serif text-cream-100 hover:text-bronze-500 transition-colors">O artystce</a></li>
+           <li><a href="/#process" class="mobile-link text-3xl font-serif text-cream-100 hover:text-bronze-500 transition-colors">Proces</a></li>
+           <li><a href="/kolekcja" class="mobile-link text-3xl font-serif text-cream-100 hover:text-bronze-500 transition-colors">Kolekcja</a></li>
+           <li><a href="/#testimonials" class="mobile-link text-3xl font-serif text-cream-100 hover:text-bronze-500 transition-colors">Opinie</a></li>
+           <li><a href="/#faq" class="mobile-link text-3xl font-serif text-cream-100 hover:text-bronze-500 transition-colors">FAQ</a></li>
+           <li><a href="/kontakt" class="mobile-link text-3xl font-serif text-bronze-500 hover:text-white transition-colors">Kontakt</a></li>
+        </ul>
+        
+        <div class="mt-16 text-cream-100/30 text-xs uppercase tracking-widest font-body">
+            Moja Pasja Ceramics
+        </div>
+    </div>
+
+    {/* Glass Background Layer for Main Nav */}
+    <div id="nav-bg" class="absolute inset-0 bg-navy-900/0 backdrop-blur-none border-b border-white/0 transition-all duration-500"></div>
+</nav>
+
+<script>
+    // Sticky Nav Logic
+    const nav = document.getElementById('main-nav');
+    const bg = document.getElementById('nav-bg');
+    
+    function updateNav() {
+        if (window.scrollY > 50) {
+            nav.classList.remove('p-6', 'md:p-12');
+            nav.classList.add('p-4', 'md:px-12', 'md:py-6');
+            
+            // Glass effect
+            bg.classList.remove('bg-navy-900/0', 'backdrop-blur-none', 'border-white/0');
+            bg.classList.add('bg-navy-900/90', 'backdrop-blur-md', 'border-white/5', 'shadow-lg');
+        } else {
+            nav.classList.add('p-6', 'md:p-12');
+            nav.classList.remove('p-4', 'md:px-12', 'md:py-6');
+            
+            // Transparent
+            bg.classList.add('bg-navy-900/0', 'backdrop-blur-none', 'border-white/0');
+            bg.classList.remove('bg-navy-900/90', 'backdrop-blur-md', 'border-white/5', 'shadow-lg');
+        }
+    }
+    
+    window.addEventListener('scroll', updateNav);
+    updateNav(); // Init check
+
+    // Mobile Menu Logic
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const line1 = document.getElementById('line-1');
+    const line2 = document.getElementById('line-2');
+    const line3 = document.getElementById('line-3');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    let isMenuOpen = false;
+
+    function toggleMenu() {
+        isMenuOpen = !isMenuOpen;
+        
+        if (isMenuOpen) {
+            // Open Menu
+            mobileMenu.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden'; // Lock scroll
+            
+            // Animate Hamburger to X
+            line1.classList.add('-rotate-45', 'translate-y-[6px]', 'w-full');
+            line2.classList.add('opacity-0');
+            line3.classList.add('rotate-45', '-translate-y-[6px]', 'w-full');
+            
+        } else {
+            // Close Menu
+            mobileMenu.classList.add('translate-x-full');
+            document.body.style.overflow = ''; // Unlock scroll
+            
+            // Animate X back to Hamburger
+            line1.classList.remove('-rotate-45', 'translate-y-[6px]');
+            line2.classList.remove('opacity-0');
+            line3.classList.remove('rotate-45', '-translate-y-[6px]');
+        }
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking a link
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (isMenuOpen) toggleMenu();
+        });
+    });
+</script>

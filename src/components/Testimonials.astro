@@ -1,0 +1,54 @@
+---
+const reviews = [
+  {
+    text: "Jest w tej ceramice coś pierwotnego. Kiedy trzymam w dłoniach kubek od Aleksandry, czuję spokój. To nie jest po prostu przedmiot, to doświadczenie.",
+    author: "Marta K.",
+    role: "Kolekcjonerka z Warszawy"
+  },
+  {
+    text: "Zamówiłam wazon na prezent ślubny. Przyszedł zapakowany jak dzieło sztuki. Piękny, ciężki, z duszą. Nowożeńcy byli zachwyceni.",
+    author: "Anna W.",
+    role: "Architekt Wnętrz"
+  },
+   {
+    text: "Uwielbiam surowość tych form. Idealnie kontrastują z moim minimalistycznym mieszkaniem. To ceramika, która ma charakter.",
+    author: "Tomasz R.",
+    role: "Fotograf"
+  }
+];
+---
+
+<section id="testimonials" class="py-24 bg-navy-900 border-t border-white/5 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 space-y-4">
+       <span class="text-bronze-500 font-serif italic text-xl tracking-widest">Słowa uznania</span>
+      <h2 class="text-4xl md:text-6xl font-serif text-cream-100">Notatki od <span class="italic text-bronze-500">Kolekcjonerów</span></h2>
+    </div>
+
+    {/* Scroll Container */}
+    <div class="flex flex-col md:flex-row gap-8 items-stretch md:justify-center">
+      {reviews.map((review, i) => (
+        <div class={`relative group flex-1 min-w-[300px] p-8 md:p-10 bg-white/[0.03] backdrop-blur-sm border border-white/10 hover:border-bronze-500/30 transition-all duration-500 reveal-on-scroll delay-${i * 100} rounded-sm`}>
+          {/* Large Quote Mark */}
+          <div class="absolute top-6 left-6 text-6xl font-serif text-bronze-500/20 leading-none">"</div>
+          
+          <div class="relative z-10 flex flex-col h-full justify-between gap-8 pt-8">
+            <p class="text-lg md:text-xl font-serif text-cream-100/90 leading-relaxed italic">
+              {review.text}
+            </p>
+            
+            <div class="flex items-center gap-4 pt-4 border-t border-white/5">
+               <div class="w-10 h-10 rounded-full bg-bronze-500/20 flex items-center justify-center text-bronze-500 font-serif font-bold">
+                 {review.author[0]}
+               </div>
+              <div>
+                <p class="text-sm font-bold text-cream-100 uppercase tracking-widest">{review.author}</p>
+                <p class="text-xs text-bronze-500 uppercase tracking-wider mt-1">{review.role}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

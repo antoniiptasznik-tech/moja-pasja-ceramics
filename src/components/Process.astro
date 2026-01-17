@@ -1,0 +1,47 @@
+---
+const steps = [
+  {
+    title: "Toczenie",
+    desc: "Każda forma rodzi się na kole garncarskim. To dialog między dłońmi a gliną, wymagający cierpliwości i siły.",
+    image: "/process-wheel.png"
+  },
+  {
+    title: "Szkliwienie",
+    desc: "Autorskie szkliwa nakładam ręcznie, warstwa po warstwie. To one nadają ceramice unikalną teksturę i głębię.",
+    image: "/process-glaze.png"
+  },
+  {
+    title: "Wypał",
+    desc: "Ostateczny test w temperaturze 1240°C. Ogień utrwala formę i wydobywa kolory, których nie da się w pełni przewidzieć.",
+    image: "/process-fire.png"
+  }
+];
+---
+
+<section id="process" class="py-24 px-6 bg-navy-900 text-cream-100">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16 space-y-4">
+      <div class="w-1 bg-bronze-500 h-12 mx-auto mb-6"></div>
+      <h2 class="text-4xl md:text-5xl font-serif">Proces <span class="italic text-bronze-500">Tworzenia</span></h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-12">
+      {steps.map((step, index) => (
+        <div class="space-y-6 group">
+          <div class="relative aspect-[4/5] overflow-hidden border border-white/5">
+            <img 
+              src={step.image} 
+              alt={step.title} 
+              class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+            />
+            <div class="absolute top-4 left-4 text-6xl font-serif text-white/10">{index + 1}</div>
+          </div>
+          <h3 class="text-2xl font-serif text-bronze-500">{step.title}</h3>
+          <p class="text-cream-100/70 font-body leading-relaxed border-l border-bronze-500/30 pl-4">
+            {step.desc}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
