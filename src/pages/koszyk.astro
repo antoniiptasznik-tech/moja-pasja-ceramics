@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import CartDetail from '../components/CartDetail';
+
+export const prerender = true;
+---
+
+<Layout>
+  <main class="bg-navy-900 min-h-screen">
+    <Navigation />
+    
+    <section class="pt-40 pb-24 px-6 max-w-7xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-serif text-cream-100 mb-2 text-center" transition:name="cart-title">Twój Koszyk</h1>
+        <p class="text-center text-cream-100/40 uppercase tracking-widest text-xs mb-16">Dokończ swoje zamówienie</p>
+        
+        <CartDetail client:only="react" />
+    </section>
+
+    <footer class="bg-navy-900/50 border-t border-white/5 py-12 text-center">
+        <p class="text-white/20 font-body text-xs uppercase tracking-widest">Bezpieczne zakupy z Moja Pasja Ceramics</p>
+    </footer>
+  </main>
+</Layout>

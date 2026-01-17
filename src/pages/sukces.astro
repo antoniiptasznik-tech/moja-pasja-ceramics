@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import OrderSuccess from '../components/OrderSuccess';
+
+export const prerender = true;
+---
+
+<Layout>
+  <main class="bg-navy-900 min-h-screen relative overflow-hidden">
+    <Navigation />
+    
+    {/* Atmospheric Background glow */}
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[500px] bg-bronze-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+    <section class="min-h-screen flex items-center justify-center pt-24 pb-12 px-6 relative z-10">
+        <OrderSuccess client:only="react" />
+    </section>
+
+    <footer class="bg-navy-900/50 absolute bottom-0 w-full border-t border-white/5 py-8 text-center">
+        <p class="text-white/20 font-body text-xs uppercase tracking-widest">Aleksandra Ptasznik Ceramics</p>
+    </footer>
+  </main>
+</Layout>

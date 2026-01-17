@@ -4,56 +4,11 @@ import Navigation from '../components/Navigation.astro';
 import Button from '../components/Button.astro';
 import Newsletter from '../components/Newsletter.astro';
 
-const products = [
-  {
-    id: 1,
-    name: "Misa Północy",
-    category: "Miski",
-    price: "180 PLN",
-    image: "/bowl.png",
-    delay: "0"
-  },
-  {
-    id: 2,
-    name: "Antyczny Wazon",
-    category: "Wazony",
-    price: "480 PLN",
-    image: "/vase.png",
-    delay: "100"
-  },
-  {
-    id: 3,
-    name: "Kubek Rytualny",
-    category: "Kubki",
-    price: "140 PLN",
-    image: "/mug.png",
-    delay: "200"
-  },
-  {
-    id: 4,
-    name: "Talerz \"Mech\"",
-    category: "Talerze",
-    price: "120 PLN",
-    image: "/bowl.png", // Placeholder reuse
-    delay: "0"
-  },
-  {
-    id: 5,
-    name: "Wazon \"Kora\"",
-    category: "Wazony",
-    price: "320 PLN",
-    image: "/vase.png", // Placeholder reuse
-    delay: "100"
-  },
-  {
-    id: 6,
-    name: "Dzbanek \"Zmierzch\"",
-    category: "Dzbanki",
-    price: "240 PLN",
-    image: "/mug.png", // Placeholder reuse
-    delay: "200"
-  }
-];
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Button from '../components/Button.astro';
+import Newsletter from '../components/Newsletter.astro';
+import { products } from '../data/products';
 
 const categories = ["Wszystkie", "Miski", "Wazony", "Kubki", "Talerze"];
 ---
@@ -88,12 +43,13 @@ const categories = ["Wszystkie", "Miski", "Wazony", "Kubki", "Talerze"];
     <div class="max-w-7xl mx-auto px-6 pb-32">
        <div class="grid md:grid-cols-3 gap-y-16 gap-x-8 md:gap-x-12">
         {products.map((product) => (
-          <div class={`group cursor-pointer reveal-on-scroll delay-${product.delay}`}>
-            <div class="relative aspect-[3/4] overflow-hidden mb-6">
+          <a href={`/produkt/${product.id}`} class={`group cursor-pointer reveal-on-scroll delay-${product.delay} block`}>
+            <div class="relative aspect-[4/5] overflow-hidden mb-6">
               <div class="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/20 transition-colors duration-500 z-10"></div>
               <img 
-                src={product.image} 
+                src={product.images[0]} 
                 alt={product.name} 
+                transition:name={`image-${product.id}`}
                 class="w-full h-full object-cover filter brightness-90 group-hover:scale-105 group-hover:brightness-100 transition-all duration-700 ease-out"
               />
               
@@ -103,10 +59,10 @@ const categories = ["Wszystkie", "Miski", "Wazony", "Kubki", "Talerze"];
               </div>
             </div>
             <div class="text-center space-y-2">
-               <h3 class="text-2xl text-cream-100 font-serif group-hover:text-bronze-500 transition-colors duration-300">{product.name}</h3>
+               <h3 class="text-2xl text-cream-100 font-serif group-hover:text-bronze-500 transition-colors duration-300" transition:name={`title-${product.id}`}>{product.name}</h3>
                <p class="text-white/40 font-body text-xs mt-1 uppercase tracking-widest">{product.category}  •  {product.price}</p>
             </div>
-          </div>
+          </a>
         ))}
        </div>
     </div>
