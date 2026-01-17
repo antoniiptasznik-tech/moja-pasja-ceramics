@@ -5,11 +5,13 @@ interface Props {
     name: string;
     price: string;
     image: string;
+    isAvailable?: boolean;
 }
 
-export default function AddToCart({ id, name, price, image }: Props) {
+export default function AddToCart({ id, name, price, image, isAvailable = true }: Props) {
 
     function handleClick() {
+        if (!isAvailable) return;
         addCartItem({ id, name, priceString: price, image });
         isCartOpen.set(true); // Open cart to show confirmation
     }
@@ -17,9 +19,13 @@ export default function AddToCart({ id, name, price, image }: Props) {
     return (
         <button
             onClick={handleClick}
-            className="w-full bg-bronze-500 text-navy-900 py-4 uppercase tracking-widest font-serif font-bold hover:bg-white transition-colors duration-300"
+            disabled={!isAvailable}
+            className={`w-full py-4 uppercase tracking-widest font-serif font-bold transition-all duration-300 ${isAvailable
+                    ? "bg-bronze-500 text-navy-900 hover:bg-white"
+                    : "bg-white/10 text-white/30 cursor-not-allowed border border-white/10"
+                }`}
         >
-            Dodaj do koszyka
+            {isAvailable ? "Dodaj do koszyka" : "Produkt Wyprzedany"}
         </button>
     );
 }

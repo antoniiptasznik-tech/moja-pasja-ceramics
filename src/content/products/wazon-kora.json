@@ -1,0 +1,15 @@
+{
+    "name": "Wazon \"Kora\"",
+    "category": "Wazony",
+    "price": "320 PLN",
+    "description": "Średniej wielkości wazon o fakturze przypominającej korę drzewa. Ziemiste tony i organiczna forma wprowadzają spokój do wnętrza.",
+    "dimensions": "Wysokość: 22cm, Średnica: 12cm",
+    "care": "Mycie ręczne.",
+    "images": [
+        "/vase.png",
+        "/process-fire.png"
+    ],
+    "delay": "100",
+    "isAvailable": true,
+    "sequence": 5
+}
