@@ -6,15 +6,19 @@ import Button from "../../components/Button.astro";
 import { getCollection, getEntry } from "astro:content";
 import AddToCart from "../../components/AddToCart";
 
-export async function getStaticPaths() {
-   const products = await getCollection("products");
-   return products.map((product) => ({
-      params: { id: product.id },
-      props: { product: product.data, id: product.id },
-   }));
+const { id } = Astro.params;
+
+if (!id) {
+   return Astro.redirect("/404");
 }
 
-const { product, id } = Astro.props;
+const productEntry = await getEntry("products", id);
+
+if (!productEntry) {
+   return Astro.redirect("/404");
+}
+
+const product = productEntry.data;
 const products = (await getCollection("products")).sort(
    (a, b) => (a.data.sequence || 0) - (b.data.sequence || 0),
 );
