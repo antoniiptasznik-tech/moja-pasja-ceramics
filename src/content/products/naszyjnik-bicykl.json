@@ -1,0 +1,14 @@
+{
+    "name": "Naszyjnik \"Retro Bicykl\"",
+    "category": "Biżuteria",
+    "price": "140 PLN",
+    "description": "Unikatowy naszyjnik ceramiczny z ręcznie naniesionym motywem bicykla. Oprawiony w szkliwo o metalicznym połysku, zawieszony na solidnym, czarnym sznurze. Doskonały dodatek dla duszy podróżnika.",
+    "dimensions": "Zawieszka: 4x4 cm, Długość sznura: 50 cm",
+    "care": "Przecierać wilgotną szmatką.",
+    "images": [
+        "/products/naszyjnik-bicykl.jpg"
+    ],
+    "delay": "100",
+    "isAvailable": true,
+    "sequence": 1
+}

@@ -1,0 +1,14 @@
+{
+    "name": "Wianek \"Leśne Echa\"",
+    "category": "Dekoracje",
+    "price": "280 PLN",
+    "description": "Artystyczny wianek ceramiczny skomponowany z ręcznie lepionych kwiatów w odcieniach głębokiego granatu i brązu. Surowa estetyka doskonale wpisuje się w klimat rustykalnych i industrialnych wnętrz.",
+    "dimensions": "Średnica: 25 cm",
+    "care": "Odkurzać miotełką.",
+    "images": [
+        "/products/wianek-lesne-echa.png"
+    ],
+    "delay": "300",
+    "isAvailable": true,
+    "sequence": 3
+}
