@@ -1,0 +1,15 @@
+{
+  "name": "Naszyjnik \"Czerwony Mak\"",
+  "category": "Biżuteria",
+  "price": "145 PLN",
+  "description": "Kobiecy i pełen charakteru naszyjnik w kształcie rozkwitniętego maku. Intensywna czerwień szkliwa pięknie kontrastuje z ciemnym, fakturowanym środkiem kwiatu. Idealny dodatek dla osób ceniących biżuterię inspirowaną naturą. Zawieszony na ozdobnym, szarym sznurze o grubym splocie.",
+  "dimensions": "Średnica kwiatu: ok. 7 cm, Długość sznura: 45 cm (z przedłużką)",
+  "care": "Chronić przed silnymi uderzeniami. Czyścić delikatnie miękką ściereczką.",
+  "images": [
+    "/products/naszyjnik-mak-2.jpg",
+    "/products/naszyjnik-mak-1.jpg"
+  ],
+  "isAvailable": true,
+  "sequence": 3,
+  "delay": "2-3 dni robocze"
+}

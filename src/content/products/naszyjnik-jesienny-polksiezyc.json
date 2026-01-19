@@ -1,0 +1,15 @@
+{
+  "name": "Naszyjnik \"Jesienny Półksiężyc\"",
+  "category": "Biżuteria",
+  "price": "165 PLN",
+  "description": "Ręcznie formowany naszyjnik w kształcie półksiężyca, zainspirowany barwami jesiennego lasu. Połączenie głębokiego brązu, słonecznej żółci i butelkowej zieleni tworzy unikatową kompozycję, która ożywi każdą stylizację. Zawieszony na grubym, bawełnianym sznurze o stonowanym szarym odcieniu.",
+  "dimensions": "Zawieszka: ok. 10x4 cm, Długość sznura: regulowana",
+  "care": "Zalecane przecieranie wilgotną szmatką. Przechowywać w suchym miejscu.",
+  "images": [
+    "/products/naszyjnik-polksiezyc-2.jpg",
+    "/products/naszyjnik-polksiezyc-1.jpg"
+  ],
+  "isAvailable": true,
+  "sequence": 2,
+  "delay": "2-3 dni robocze"
+}

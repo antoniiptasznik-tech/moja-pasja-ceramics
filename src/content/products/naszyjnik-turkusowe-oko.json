@@ -1,0 +1,15 @@
+{
+  "name": "Naszyjnik \"Turkusowe Oko\"",
+  "category": "Biżuteria",
+  "price": "120 PLN",
+  "description": "Elegancki, minimalistyczny naszyjnik z centralnym elementem pokrytym spękanym szkliwem w kolorze turkusowym. Ceramiczne oczko oprawione zostało w glinę o metalicznym wykończeniu, przypominającym starą miedź. Całość zawieszona na smukłym, czarnym rzemyku, co nadaje mu nowoczesnego charakteru.",
+  "dimensions": "Średnica zawieszki: 4 cm, Długość rzemyka: 55 cm",
+  "care": "Przecierać suchą lub lekko wilgotną szmatką.",
+  "images": [
+    "/products/naszyjnik-bolo-turkus-front.png",
+    "/products/naszyjnik-bolo-turkus.jpg"
+  ],
+  "isAvailable": true,
+  "sequence": 4,
+  "delay": "2-3 dni robocze"
+}
