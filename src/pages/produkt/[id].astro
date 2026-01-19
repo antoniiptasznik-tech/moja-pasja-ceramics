@@ -25,7 +25,11 @@ const products = (await getCollection("products")).sort(
 );
 ---
 
-<Layout>
+<Layout
+   title={`${product.name} | Aleksandra Ptasznik Ceramics`}
+   description={product.description}
+   image={product.images[0]}
+>
    <main class="bg-navy-900 min-h-screen">
       <Navigation />
 
