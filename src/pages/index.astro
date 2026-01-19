@@ -153,9 +153,9 @@ const posts = (await getCollection("blog"))
             >
             </div>
             <img
-              src="/artist.jpg"
+              src="/aleksandra-ptasznik.jpg"
               alt="Aleksandra Ptasznik - artystka"
-              class="w-full h-full object-cover grayscale contrast-125"
+              class="w-full h-full object-cover contrast-110 sepia-[.15]"
             />
           </div>
           <p
@@ -223,52 +223,8 @@ const posts = (await getCollection("blog"))
 
     <Testimonials />
 
+    {/* FAQ Section */}
     <FAQ />
-
-    {/* Blog Section */}
-    <Section id="blog">
-      <div class="text-center mb-16 space-y-4 reveal-on-scroll">
-        <h2 class="text-4xl md:text-6xl text-cream-100">
-          Ostatnio na <span class="italic text-bronze-500">blogu</span>
-        </h2>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8 md:gap-12">
-        {
-          posts.map((post) => (
-            <article class="group reveal-on-scroll">
-              <div class="relative aspect-video overflow-hidden mb-6 bg-white/5">
-                {post.data.coverImage && (
-                  <img
-                    src={post.data.coverImage}
-                    alt={post.data.title}
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                )}
-                <div class="absolute inset-0 bg-navy-900/20 group-hover:bg-navy-900/0 transition-colors duration-500" />
-              </div>
-              <div class="space-y-4">
-                <span class="text-bronze-500 font-serif text-sm italic">
-                  {new Date(post.data.date).toLocaleDateString("pl-PL")}
-                </span>
-                <h3 class="text-2xl text-cream-100 font-serif group-hover:text-bronze-500 transition-colors duration-300">
-                  {post.data.title}
-                </h3>
-                <p class="text-cream-100/60 font-body text-sm leading-relaxed">
-                  {post.data.excerpt}
-                </p>
-                <a
-                  href="#"
-                  class="inline-block text-xs uppercase tracking-widest text-cream-100 border-b border-bronze-500/30 pb-1 hover:border-bronze-500 transition-colors"
-                >
-                  Czytaj więcej
-                </a>
-              </div>
-            </article>
-          ))
-        }
-      </div>
-    </Section>
 
     <Newsletter />
 
