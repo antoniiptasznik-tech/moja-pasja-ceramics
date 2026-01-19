@@ -1,15 +1,15 @@
 {
-    "name": "Naszyjnik \"Oko Oceanu\"",
-    "category": "Biżuteria",
-    "price": "160 PLN",
-    "description": "Hipnotyzujący wisior inspirowany głębinami oceanu. Warstwowe szkliwienie tworzy niepowtarzalny efekt przenikania się błękitu i zieleni, zamknięty w organicznej formie.",
-    "dimensions": "Średnica: 5 cm, Długość rzemienia: regulowana",
-    "care": "Unikać kontaktu z perfumami.",
-    "images": [
-        "/products/naszyjnik-oko-oceanu.png",
-        "/products/naszyjnik-oko-oceanu-2.jpg"
-    ],
-    "delay": "200",
-    "isAvailable": true,
-    "sequence": 2
+  "name": "Naszyjnik \"Oko Oceanu\"",
+  "category": "Biżuteria",
+  "price": "160 PLN",
+  "description": "Hipnotyzujący wisior inspirowany głębinami oceanu. Warstwowe szkliwienie tworzy niepowtarzalny efekt przenikania się błękitu i zieleni, zamknięty w organicznej formie.",
+  "dimensions": "Średnica: 5 cm, Długość rzemienia: regulowana",
+  "care": "Unikać kontaktu z perfumami.",
+  "images": [
+    "/products/naszyjnik-oko-oceanu-2.jpg",
+    "/products/naszyjnik-oko-oceanu.png"
+  ],
+  "isAvailable": true,
+  "sequence": 2,
+  "delay": "200"
 }

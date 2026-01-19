@@ -33,6 +33,10 @@ export default config({
                     label: 'Kolejność wyświetlania',
                     defaultValue: 0
                 }),
+                delay: fields.text({
+                    label: 'Czas wysyłki (np. 2-3 dni robocze)',
+                    description: 'Pozostaw puste dla domyślnego czasu',
+                }),
             },
         }),
         blog: collection({

@@ -1,14 +1,15 @@
 {
-    "name": "Patera \"Koronkowa Noc\"",
-    "category": "Naczynia",
-    "price": "350 PLN",
-    "description": "Imponująca patera ceramiczna o bogatej, koronkowej fakturze odciśniętej w ciemnej glinie. Subtelnym, satynowym wykończeniu nadaje jej elegancji i tajemniczości.",
-    "dimensions": "Średnica: 30 cm",
-    "care": "Mycie ręczne zalecane.",
-    "images": [
-        "/products/patera-koronkowa.png"
-    ],
-    "delay": "400",
-    "isAvailable": true,
-    "sequence": 4
+  "name": "Patera \"Koronkowa Noc\"",
+  "category": "Naczynia",
+  "price": "350 PLN",
+  "description": "Imponująca patera ceramiczna o bogatej, koronkowej fakturze odciśniętej w ciemnej glinie. Subtelnym, satynowym wykończeniu nadaje jej elegancji i tajemniczości.",
+  "dimensions": "Średnica: 30 cm",
+  "care": "Mycie ręczne zalecane.",
+  "images": [
+    "/products/patera-koronkowa.png",
+    "/products/patera-koronkowa-front.png"
+  ],
+  "isAvailable": true,
+  "sequence": 4,
+  "delay": "400"
 }

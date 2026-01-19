@@ -5,6 +5,7 @@ import Newsletter from "../../components/Newsletter.astro";
 import Button from "../../components/Button.astro";
 import { getCollection, getEntry } from "astro:content";
 import AddToCart from "../../components/AddToCart";
+import ProductGallery from "../../components/ProductGallery";
 
 const { id } = Astro.params;
 
@@ -31,39 +32,14 @@ const products = (await getCollection("products")).sort(
       <section class="pt-32 pb-24 px-6 max-w-7xl mx-auto">
          <div class="grid md:grid-cols-2 gap-12 md:gap-24 items-start">
             {/* Left Column: Gallery */}
-            <div class="space-y-6">
-               <div class="relative aspect-[3/2] overflow-hidden bg-white/5">
-                  <img
-                     src={product.images[0]}
-                     alt={product.name}
-                     transition:name={`image-${id}`}
-                     class={`w-full h-full object-cover ${!product.isAvailable ? "grayscale opacity-80" : ""}`}
-                  />
-                  {
-                     !product.isAvailable && (
-                        <div class="absolute inset-0 bg-navy-900/40 backdrop-blur-[2px] flex items-center justify-center">
-                           <span class="border border-white/30 px-6 py-2 text-cream-100 text-xs tracking-widest uppercase bg-navy-900/60">
-                              Wyprzedane
-                           </span>
-                        </div>
-                     )
-                  }
-               </div>
-               <div class="grid grid-cols-4 gap-4">
-                  {
-                     product.images.map((img, i) => (
-                        <div
-                           class={`aspect-square overflow-hidden cursor-pointer border border-white/10 hover:border-bronze-500 transition-colors ${i === 0 ? "ring-1 ring-bronze-500" : ""}`}
-                        >
-                           <img
-                              src={img}
-                              alt=""
-                              class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity"
-                           />
-                        </div>
-                     ))
-                  }
-               </div>
+            <div>
+               <ProductGallery
+                  client:load
+                  images={product.images}
+                  name={product.name}
+                  id={id}
+                  isAvailable={product.isAvailable}
+               />
             </div>
 
             {/* Right Column: Details */}
